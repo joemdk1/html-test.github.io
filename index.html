@@ -1,9 +1,62 @@
 <!DOCTYPE html>
 <html>
-<body>
-
-<h1>My First Heading</h1>
-<p>My first paragraph.</p>
-
-</body>
+  <head>
+    <title>My Resume Website</title>
+    <style>
+      /* Add your CSS styling here */
+      body {
+        background-color: #333;
+        color: #fff;
+        font-family: Arial, sans-serif;
+      }
+      /* Add styling for the navigation tabs */
+      .nav-tabs {
+        display: flex;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+      .nav-tabs li {
+        flex: 1;
+        text-align: center;
+      }
+      .nav-tabs li a {
+        display: block;
+        padding: 8px 0;
+        text-decoration: none;
+        color: #fff;
+      }
+      .nav-tabs li a:hover {
+        background-color: #555;
+      }
+      /* Add styling for the tab content */
+      .tab-content {
+        padding: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <ul class="nav-tabs">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#more">More</a></li>
+      </ul>
+    </nav>
+    <div class="tab-content">
+      <div id="home">
+        <!-- Add your home content here -->
+      </div>
+      <div id="about">
+        <!-- Add your about me content here -->
+      </div>
+      <div id="projects">
+        <!-- Add your projects content here -->
+      </div>
+      <div id="more">
+        <!-- Add your more content here -->
+      </div>
+    </div>
+  </body>
 </html>
