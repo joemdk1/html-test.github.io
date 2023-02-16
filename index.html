@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>My Resume Website</title>
+    <title>Joe Mathioudakis</title>
     <style>
       /* Add your CSS styling here */
       body {
@@ -38,27 +38,49 @@
   <body>
     <nav>
       <ul class="nav-tabs">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About Me</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#more">More</a></li>
+        <li><a href="#home" class="tab-link active">Home</a></li>
+        <li><a href="#about" class="tab-link">About Me</a></li>
+        <li><a href="#projects" class="tab-link">Projects</a></li>
+        <li><a href="#more" class="tab-link">More</a></li>
       </ul>
     </nav>
     <div class="tab-content">
-      <div id="home">
+      <div id="home" class="tab-pane active">
         <!-- Add Your Home Content Here -->
         This is the Home Page
       </div>
-      <div id="about">
+      <div id="about" class="tab-pane">
         <!-- Add Your About Content Here -->
         This is the About Page
       </div>
-      <div id="projects">
+      <div id="projects" class="tab-pane">
         <!-- See Projects Here -->
       </div>
-      <div id="more">
+      <div id="more" class="tab-pane">
         <!-- Add your more content here -->
       </div>
     </div>
+    <script>
+      // Get all the tab links and tab panes
+      const tabLinks = document.querySelectorAll('.tab-link');
+      const tabPanes = document.querySelectorAll('.tab-pane');
+      
+      // Attach click event listener to all tab links
+      tabLinks.forEach((tabLink) => {
+        tabLink.addEventListener('click', (e) => {
+          // Prevent the default anchor tag behaviour
+          e.preventDefault();
+          
+          // Deactivate all the tab links and tab panes
+          tabLinks.forEach((tl) => tl.classList.remove('active'));
+          tabPanes.forEach((tp) => tp.classList.remove('active'));
+          
+          // Activate the clicked tab link and corresponding tab pane
+          e.target.classList.add('active');
+          const targetPane = document.querySelector(e.target.hash);
+          targetPane.classList.add('active');
+        });
+      });
+    </script>
   </body>
 </html>
