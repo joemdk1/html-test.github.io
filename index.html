@@ -38,47 +38,43 @@
   <body>
     <nav>
       <ul class="nav-tabs">
-        <li><a href="#home" class="tab-link active">Home</a></li>
-        <li><a href="#about" class="tab-link">About Me</a></li>
-        <li><a href="#projects" class="tab-link">Projects</a></li>
-        <li><a href="#more" class="tab-link">More</a></li>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#more">More</a></li>
       </ul>
     </nav>
     <div class="tab-content">
-      <div id="home" class="tab-pane active">
+      <div id="home">
         <!-- Add Your Home Content Here -->
         This is the Home Page
       </div>
-      <div id="about" class="tab-pane">
+      <div id="about">
         <!-- Add Your About Content Here -->
         This is the About Page
       </div>
-      <div id="projects" class="tab-pane">
+      <div id="projects">
         <!-- See Projects Here -->
+        This is the Projects Page
       </div>
-      <div id="more" class="tab-pane">
+      <div id="more">
         <!-- Add your more content here -->
+        This is the More Page
       </div>
     </div>
     <script>
-      // Get all the tab links and tab panes
-      const tabLinks = document.querySelectorAll('.tab-link');
-      const tabPanes = document.querySelectorAll('.tab-pane');
+      const tabs = document.querySelectorAll('.nav-tabs li a');
+      const contents = document.querySelectorAll('.tab-content > div');
       
-      // Attach click event listener to all tab links
-      tabLinks.forEach((tabLink) => {
-        tabLink.addEventListener('click', (e) => {
-          // Prevent the default anchor tag behaviour
+      tabs.forEach((tab, i) => {
+        tab.addEventListener('click', (e) => {
           e.preventDefault();
-          
-          // Deactivate all the tab links and tab panes
-          tabLinks.forEach((tl) => tl.classList.remove('active'));
-          tabPanes.forEach((tp) => tp.classList.remove('active'));
-          
-          // Activate the clicked tab link and corresponding tab pane
-          e.target.classList.add('active');
-          const targetPane = document.querySelector(e.target.hash);
-          targetPane.classList.add('active');
+          const currentTab = document.querySelector('.active');
+          currentTab.classList.remove('active');
+          tab.classList.add('active');
+          const currentContent = document.querySelector('.show');
+          currentContent.classList.remove('show');
+          contents[i].classList.add('show');
         });
       });
     </script>
